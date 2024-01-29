@@ -34,20 +34,27 @@ for (i = 0; i < questions.length; i++){
 }
 
 function gradeQuiz(candidateAnswers) {
-
+  let numberOfQuizQuestions = 0;
+  let numberOfCorrectAnswers = 0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
- for (i = 0; i < candidateAnswers.length; i++ ){
-  if (correctAnswers[i] === candidateAnswers[i]){
-    console.log("Great!!, your answer is correct");
-  } else{
-    console.log("Incorrect answer");
+  for (i = 0; i < candidateAnswers.length; i++ ){
+    if (correctAnswers[i] === candidateAnswers[i]){
+      numberOfCorrectAnswers += 1;
+      console.log("Great!!, your answer is correct");
+    } else{
+      numberOfCorrectAnswers += 0;
+      console.log("Incorrect answer");
   }
- }
+  }
+let grade;  //TODO 3.2 use this variable to calculate the candidates score. 
   
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  //   if (correctAnswers[i] === candidateAnswers[i]){
+  //    numberOfCorrectAnswers += i;
+  //   } else{
+  //     numberOfCorrectAnswers += 0;
+  //   } 
+  // numberOfQuizQuestions = questions.length;
+  grade = (numberOfCorrectAnswers/numberOfQuizQuestions) * 100
   return grade;
 }
 
